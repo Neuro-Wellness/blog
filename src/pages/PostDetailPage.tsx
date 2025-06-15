@@ -9,7 +9,7 @@ import { Calendar, User, Clock } from "lucide-react";
 import { fetchPostById } from "../services/PostService";
 import { useState, useEffect } from "react";
 
-function PostDetail() {
+function PostDetailPage() {
     const { id } = useParams<{ id: string }>();
     const [post, setPost] = useState<PostDetail | null>(null);
 
@@ -65,4 +65,4 @@ function PostDetail() {
     );
 }
 
-export default PostDetail;
+export default PostDetailPage;

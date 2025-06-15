@@ -1,6 +1,6 @@
 import { Routes, Route } from "react-router-dom";
 import Home from "../pages/Home";
-import PostDetail from "../pages/PostDetail";
+import PostDetailPage from "../pages/PostDetailPage";
 
 export default function AppRoutes() {
     return (
@@ -8,7 +8,7 @@ export default function AppRoutes() {
             <Route path="/" element={<Home />} />
             <Route path="/archive" element={<Home />} />
             <Route path="/about" element={<Home />} />
-            <Route path="/post/:id" element={<PostDetail />} />
+            <Route path="/post/:id" element={<PostDetailPage />} />
         </Routes>
     );
 }

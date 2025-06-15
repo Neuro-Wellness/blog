@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
 import { useSearchParams } from "react-router-dom";
-import type PostDetail from "../PostDetail";
+import type { PostDetail } from "../../types/Post";
 import http from "../../utils/HttpClient";
 import { MainCard } from "../../widgets/cards/MainCard";
 import ArchiveTimeline from "./ArchiveTimeline";
