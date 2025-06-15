@@ -5,7 +5,7 @@ import ThemeSwitcher from "./button/ThemeSwitcher";
 import { useState, useEffect } from "react";
 import type { PostDetail } from "../types/Post";
 import http from "../utils/HttpClient";
-
+import logo from "../assets/logo/Logo_dark.svg"
 const Navbar = () => {
 
     const { colorTheme } = useTheme();
@@ -40,7 +40,7 @@ const Navbar = () => {
 
                 <a className="btn btn-ghost" onClick={() => {
                     navigate("/");
-                }}>  <img src="src/assets/logo/Logo.svg" alt="An icon" className="w-45 h-45" />
+                }}>  <img src={logo} alt="Icon" className="w-45 h-45" />
                 </a>
             </div>
             <div className="navbar-center hidden lg:flex">
