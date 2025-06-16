@@ -59,7 +59,7 @@ function Home() {
     if (!user) {
         // 骨架屏展示
         return (
-            <div className="px-4 sm:px-8 md:px-12 lg:px-16 xl:px-20 py-6 max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-4 gap-6 animate-pulse">
+            <div className="px-0 sm:px-0 md:px-12 lg:px-16 xl:px-20 py-6 max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-4 gap-6 animate-pulse">
                 {/* 左侧栏骨架 */}
                 <div className="lg:col-span-1 space-y-6">
                     {/* Profile Skeleton */}
@@ -109,7 +109,7 @@ function Home() {
     }
 
     return (
-        <div className="px-20 py-6 max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-4 gap-6">
+        <div className="px-2 sm:px-6 md:px-12 lg:px-16 xl:px-20 py-6 max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-4 gap-6">
             {/* 左侧栏 */}
             <div className="lg:col-span-1 space-y-6 min-w-0 overflow-hidden">
                 <ProfileCard {...user} />
