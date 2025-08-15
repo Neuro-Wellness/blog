@@ -8,7 +8,7 @@ interface Props {
 const ArchiveTimeline = ({ posts }: Props) => {
     // 按年份分组
     const grouped = posts.reduce((acc, post) => {
-        const year = post.date.split("-")[0];
+        const year = post.updatedAt.split("-")[0];
         acc[year] = acc[year] || [];
         acc[year].push(post);
         return acc;
@@ -24,9 +24,9 @@ const ArchiveTimeline = ({ posts }: Props) => {
                     <div className="timeline-middle bg-primary"></div>
                     <div className="timeline-end space-y-2">
                         {grouped[year].map((post) => (
-                            <div key={post._id} className="card bg-base-200 shadow-sm p-4" onClick={() => navigate(`/post/${post._id}`)}>
+                            <div key={post.id} className="card bg-base-200 shadow-sm p-4" onClick={() => navigate(`/post/${post.id}`)}>
                                 <h3 className="font-semibold">{post.title}</h3>
-                                <p className="text-sm text-gray-500">{post.date}</p>
+                                <p className="text-sm text-gray-500">{post.updatedAt}</p>
                             </div>
                         ))}
                     </div>

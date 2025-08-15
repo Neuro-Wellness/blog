@@ -1,7 +1,7 @@
 import { createContext, useContext, useState, useEffect } from "react";
 import { getThemeFromTemperature } from "../utils/ThemeMap";
 
-type Theme = "cupcake" | "dark" | "system";
+type Theme = "lemonade" | "dark" | "system";
 
 interface ThemeContextProps {
     theme: Theme;
@@ -14,8 +14,8 @@ const ThemeContext = createContext<ThemeContextProps | undefined>(undefined);
 
 
 export const ThemeProvider = ({ children }: { children: React.ReactNode }) => {
-    const [theme, setTheme] = useState<Theme>("cupcake");
-    const [colorTheme, setColorTheme] = useState("spring"); // 添加这一行
+    const [theme, setTheme] = useState<Theme>("lemonade");
+    const [colorTheme, setColorTheme] = useState("spring");
 
     useEffect(() => {
         const init = async () => {
@@ -28,7 +28,7 @@ export const ThemeProvider = ({ children }: { children: React.ReactNode }) => {
 
     useEffect(() => {
         if (theme === "system") {
-            const systemTheme = window.matchMedia("(prefers-color-scheme: dark)").matches ? "dark" : "cupcake";
+            const systemTheme = window.matchMedia("(prefers-color-scheme: dark)").matches ? "dark" : "lemonade";
             document.documentElement.setAttribute("data-theme", systemTheme);
         } else {
             document.documentElement.setAttribute("data-theme", theme);

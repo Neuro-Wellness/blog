@@ -1,4 +1,3 @@
-import http from "../utils/HttpClient";
 
 export interface UserProfile {
   name: string;
@@ -9,5 +8,11 @@ export interface UserProfile {
 }
 
 export const fetchUserProfile = async (): Promise<UserProfile> => {
-  return await http.get<UserProfile>("/user");
+
+  return {
+    name: "Neurowellness",
+    bio: "Heal mind and body the nature way",
+    avatarUrl: "https://image.aichemyharmony.ca/avatar/blog_avatar.jpg"
+
+  }
 };

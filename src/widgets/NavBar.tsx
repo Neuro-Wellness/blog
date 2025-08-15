@@ -6,6 +6,8 @@ import { useState, useEffect } from "react";
 import type { PostDetail } from "../types/Post";
 import http from "../utils/HttpClient";
 import logo from "../assets/logo/Logo_dark.svg"
+
+
 const Navbar = () => {
 
     const { colorTheme } = useTheme();
@@ -14,23 +16,37 @@ const Navbar = () => {
     const [keyword, setKeyword] = useState("");
     const [suggestions, setSuggestions] = useState<PostDetail[]>([]);
     const [showSuggestions, setShowSuggestions] = useState(false);
-
-    // 请求搜索建议
     useEffect(() => {
         const handler = setTimeout(() => {
             if (keyword.trim()) {
                 http
-                    .get<PostDetail[]>("/search", { params: { keyword } })
-                    .then(setSuggestions);
+                    .get("https://api.aichemyharmony.ca/api/home/search", { params: { keyword } })
+                    .then((res) => {
+                        const data = res as any[];
+                        const transformed = data.map(item => ({
+                            id: item.id,
+                            title: item.title,
+                            content: item.content || "",
+                            excerpt: item.content?.slice(0, 120) || "",
+                            coverImage: item.coverImage || "",
+                            tags: item.tags || [],
+                            category: item.category || "",
+                            createdAt: item.createdAt || "",
+                            updatedAt: item.updatedAt || "",
+                            views: item.views ?? 0,
+                        }));
+                        setSuggestions(transformed);
+                    });
                 setShowSuggestions(true);
             } else {
                 setSuggestions([]);
                 setShowSuggestions(false);
             }
-        }, 200); // 防抖
+        }, 200);
 
         return () => clearTimeout(handler);
     }, [keyword]);
+
 
     const { text } = ThemeColorMap[colorTheme];
     return (
@@ -38,10 +54,7 @@ const Navbar = () => {
         <div className="navbar bg-base-150 shadow-sm px-5">
             <div className="navbar-start">
 
-                <a className="btn btn-ghost" onClick={() => {
-                    navigate("/");
-                }}>  <img src={logo} alt="Icon" className="w-45 h-45" />
-                </a>
+
             </div>
             <div className="navbar-center hidden lg:flex">
                 <ul className="menu menu-horizontal px-1">
@@ -78,12 +91,12 @@ const Navbar = () => {
                         <ul className="absolute top-full right-0 mt-1 w-72 bg-base-100 shadow-lg rounded-box p-2 z-50">
                             {suggestions.map((sug) => (
                                 <li
-                                    key={sug._id}
+                                    key={sug.id}
                                     className="p-2 hover:bg-base-200 cursor-pointer rounded"
                                     onMouseDown={() => {
                                         setShowSuggestions(false);
                                         setKeyword("");
-                                        navigate(`/post/${sug._id}`);
+                                        navigate(`/post/${sug.id}`);
                                     }}
 
                                 >

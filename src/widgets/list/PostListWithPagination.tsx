@@ -26,7 +26,7 @@ const PostListWithPagination = () => {
         <div className="space-y-4">
             {/* 文章列表 */}
             {posts.map((post) => (
-                <PostCard key={post._id} post={post} />
+                <PostCard key={post.id} post={post} />
             ))}
 
             {/* 分页按钮 */}

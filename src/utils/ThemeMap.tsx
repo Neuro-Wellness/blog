@@ -1,7 +1,5 @@
 // utils/ThemeMap.ts
 export function getThemeFromTemperature(temp: number): string {
-  if (temp >= 30) return "summer";     // 比如高温时用热情的主题
-  if (temp <= 10) return "winter";     // 冷的时候用冷色调
   return "spring";                     // 其他时候用温和主题
 }
 

@@ -13,7 +13,7 @@ const PostCard = ({ post }: { post: PostPreview }) => {
     const navigate = useNavigate();
 
     const handleClick = () => {
-        navigate(`/post/${post._id}`);
+        navigate(`/post/${post.id}`);
     };
 
     const hasCover = Boolean(post.coverImage);
@@ -28,12 +28,12 @@ const PostCard = ({ post }: { post: PostPreview }) => {
                 <div className="flex flex-wrap items-center gap-2 text-sm text-gray-500">
                     <span className={`inline-flex items-center gap-1 ${bg} ${text} px-2 py-1 rounded`}>
                         <Calendar className="w-4 h-4" />
-                        {post.date}
+                        {post.updatedAt}
                     </span>
 
                     <span className={`inline-flex items-center gap-1 ${bg} ${text} px-2 py-1 rounded`}>
                         <BookOpen className="w-4 h-4" />
-                        {post.category}
+                        {post.tags}
                     </span>
 
                     <span className={`inline-flex items-center gap-1 ${bg} ${text} px-2 py-1 rounded`}>

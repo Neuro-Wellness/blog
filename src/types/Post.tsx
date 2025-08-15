@@ -1,25 +1,18 @@
 // types/Post.ts
 export interface PostPreview {
-    _id: string;
+    id: string;
     title: string;
-    excerpt: string;
-    date: string;
-    category: string;
-    tags: string[];
     coverImage: string;
-    wordCount: number;
-    readTime: number;
+    excerpt?: string; // optional
+    tags: string[];
+    views: number;
+    updatedAt: string;
 }
 
 export interface PostDetail extends PostPreview {
-    slug: string;
     content: string;
-    author: string;
-    updatedAt: string;
-    authorId: string;
-    draft: boolean;
-    featured: boolean;
 }
+
 
 export interface Paginated<T> {
     data: T[];

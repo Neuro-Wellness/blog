@@ -5,7 +5,7 @@ function ThemeSwitcher() {
     const { theme, setTheme } = useTheme();
 
     const toggleQuick = () => {
-        const next = theme === "dark" ? "cupcake" : "dark";
+        const next = theme === "dark" ? "lemonade" : "dark";
         setTheme(next);
     };
 
@@ -23,7 +23,7 @@ function ThemeSwitcher() {
                 tabIndex={0}
                 className="dropdown-content z-10 menu p-2 shadow bg-base-100 rounded-box w-36"
             >
-                <li><a onClick={() => setTheme("cupcake")}><Sun className="w-4 h-4" /> Light</a></li>
+                <li><a onClick={() => setTheme("lemonade")}><Sun className="w-4 h-4" /> Light</a></li>
                 <li><a onClick={() => setTheme("dark")}><Moon className="w-4 h-4" /> Dark</a></li>
                 <li><a onClick={() => setTheme("system")}><Monitor className="w-4 h-4" /> System</a></li>
             </ul>

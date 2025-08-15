@@ -36,7 +36,7 @@ function PostDetailPage() {
                 </span>
                 <span className="flex items-center gap-1">
                     <Calendar className="w-4 h-4" />
-                    {post.date}
+                    {post.updatedAt}
                 </span>
                 <span className="flex items-center gap-1">
                     <Clock className="w-4 h-4" />

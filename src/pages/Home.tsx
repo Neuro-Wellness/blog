@@ -70,14 +70,14 @@ function Home() {
                     </div>
 
                     {/* Category Skeleton */}
-                    <div className="card shadow p-4 space-y-2">
+                    {/* <div className="card shadow p-4 space-y-2">
                         <div className="skeleton h-4 w-1/2" />
                         <div className="space-y-2">
                             {[...Array(4)].map((_, i) => (
                                 <div key={i} className="skeleton h-3 w-full" />
                             ))}
                         </div>
-                    </div>
+                    </div> */}
 
                     {/* Tags Skeleton */}
                     <div className="card shadow p-4 space-y-2">
@@ -113,7 +113,7 @@ function Home() {
             {/* 左侧栏 */}
             <div className="lg:col-span-1 space-y-6 min-w-0 overflow-hidden">
                 <ProfileCard {...user} />
-                <CategoryCard />
+                {/* <CategoryCard /> */}
                 <TagsCard />
             </div>
 
