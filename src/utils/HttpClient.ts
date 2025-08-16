@@ -54,8 +54,7 @@ class HttpClient {
 }
 
 // 根据环境设置 baseURL
-const BASE_URL =
-    import.meta.env.VITE_API_BASE || 'https://blog.charlie-cloud.me/api';
+const BASE_URL = 'https://blog.charlie-cloud.me/api';
 
 const http = new HttpClient(BASE_URL);
 export default http;
