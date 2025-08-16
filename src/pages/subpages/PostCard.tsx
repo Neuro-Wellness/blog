@@ -44,9 +44,6 @@ const PostCard = ({ post }: { post: PostPreview }) => {
 
                 <p className="text-gray-700 text-sm">{post.excerpt}</p>
 
-                <div className="text-gray-400 text-xs">
-                    {post.wordCount} words &nbsp;|&nbsp; {post.readTime} minutes
-                </div>
             </div>
 
             {/* Cover image with hover arrow */}

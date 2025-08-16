@@ -32,7 +32,6 @@ function PostDetailPage() {
             <div className="text-sm text-gray-500 mb-4 flex flex-wrap gap-4 items-center">
                 <span className="flex items-center gap-1">
                     <User className="w-4 h-4" />
-                    {post.author}
                 </span>
                 <span className="flex items-center gap-1">
                     <Calendar className="w-4 h-4" />
@@ -40,7 +39,6 @@ function PostDetailPage() {
                 </span>
                 <span className="flex items-center gap-1">
                     <Clock className="w-4 h-4" />
-                    {post.readTime} Minutes · {post.wordCount} Words
                 </span>
             </div>
 

@@ -5,7 +5,6 @@ import ThemeSwitcher from "./button/ThemeSwitcher";
 import { useState, useEffect } from "react";
 import type { PostDetail } from "../types/Post";
 import http from "../utils/HttpClient";
-import logo from "../assets/logo/Logo_dark.svg"
 
 
 const Navbar = () => {
@@ -62,8 +61,6 @@ const Navbar = () => {
                         onClick={() => navigate("/")}>Home</a></li>
                     <li><a className={`${text}`}
                         onClick={() => navigate("/archive")}>Archive</a></li>
-                    <li><a className={`${text}`}
-                        onClick={() => navigate("/about")}>About Me</a></li>
                 </ul>
             </div>
 

@@ -1,5 +1,5 @@
 // utils/ThemeMap.ts
-export function getThemeFromTemperature(temp: number): string {
+export function getThemeFromTemperature(_temp: number): string {
   return "spring";                     // 其他时候用温和主题
 }
 

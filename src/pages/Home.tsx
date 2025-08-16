@@ -1,7 +1,6 @@
 import { ProfileCard } from '../widgets/cards/ProfileCard';
 import { MainCard } from '../widgets/cards/MainCard';
 
-import CategoryCard from "../widgets/cards/CategoriesCard";
 import { useEffect, useState } from "react";
 import { fetchUserProfile, type UserProfile } from "../services/UserService";
 import TagsCard from "../widgets/cards/TagsCard";
